@@ -16,21 +16,18 @@
       - Incoming HTTP/HTTPS connections via ports 80/443 (Can be limitated to specific locations depending on your needs)
       - Open outgoing connection to the internet. Node should be regulary updated and have to be connected to the blockchain network.
 
-2. Connect to the host and download choosen installation script:
+2. Connect to the host and download the installation script:
     
     - EWC: `wget -O install-rpc.bash https://raw.githubusercontent.com/dathbezumniy/ewc-rpc-node/main/install-rpc-ubuntu-server-18.04-ewc.bash`
 
-3. Run installation script in selected option
-
-    - Basic possibility with HTTP Only: `sudo bash install-rpc.bash install-http`
-
+3. Run installation script with selected option:
       In this configuration we receive ready to use RPC with connection provided via HTTP on port 80
-
-    - Second option with HTTPS: `sudo bash install-rpc.bash install-https`
+    - Basic possibility with HTTP Only: `sudo bash install-rpc.bash install-http`
 
       In this configuration we receive RPC with self-signed certificate which is not allowed by most browsers.
       Afer the installation user is obligated to provide his own certificates.
-      
+    - Second option with HTTPS: `sudo bash install-rpc.bash install-https`
+
 4. I have added additional instructions to the script in order to download db-backup.
     If for some reason script does not download and sets everything up automatically, please refer here for manual https://energyweb.atlassian.net/wiki/spaces/EWF/pages/1013153839/How+to+use+ready-to-go+chain+backup or ping me on discord.
 
