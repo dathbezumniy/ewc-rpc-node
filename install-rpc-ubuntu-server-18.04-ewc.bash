@@ -405,20 +405,29 @@ function install {
   writeDockerCompose
 
   # start everything up
-  echo "doing first launch in order to populate chain-data directory"
+  echo "Doing first launch in order to populate chain-data directory"
   docker-compose up -d
-  echo "stopping containers so you could download and unpack snapshot db\n"
+  echo ""
+  echo "Stopping containers so you could download and unpack snapshot db"
+  echo ""
   docker-compose down
-  echo "deleting empty db as per manual: https://energyweb.atlassian.net/wiki/spaces/EWF/pages/1013153839/How+to+use+ready-to-go+chain+backup"
+  echo ""
+  echo "deleting empty db (chain-data/chains/EnergyWebChain) as per manual: https://energyweb.atlassian.net/wiki/spaces/EWF/pages/1013153839/How+to+use+ready-to-go+chain+backup"
+  echo ""
   rm -rf chain-data/chains/EnergyWebChain
-  echo "downloading db backup..."
+  echo "Downloading db backup... ~22GB"
   curl -L https://storage.googleapis.com/ewc-boot-db/ewc_chain.tar --output chain-data/chains/chain.tar
-  echo "extracting db backup..."
+  echo ""
+  echo "Extracting db backup..."
   tar -xvf chain-data/chains/chain.tar -C chain-data/chains/
-  echo "removing old nodes.json"
+  echo ""
+  echo "Removing old nodes.json"
   rm chain-data/chains/EnergyWebChain/network/nodes.json
+  echo ""
   echo "starting up docker-compose once more, now sync should take only few minutes"
   docker-compose up -d
+  
+  docker-compose logs -f
 
 }
 
