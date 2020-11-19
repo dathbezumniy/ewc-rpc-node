@@ -4,7 +4,7 @@
 
 1. Install operating system and prepare dedicated host for RPC node
 
-    At least we recommend to run AWS EC2 instance with minimum resources like `t3.medium` or gcloud 'e2-medium'
+    At least we recommend to run AWS EC2 instance with minimum resources like `t3.medium` or gcloud `e2-medium`
     Basic required instance specification:
       - OS: Ubuntu Server 18.04
       - CPU: 2
