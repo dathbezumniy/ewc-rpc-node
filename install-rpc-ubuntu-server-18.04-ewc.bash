@@ -413,7 +413,7 @@ function install {
   rm -rf chain-data/chains/EnergyWebChain
   echo "downloading db backup..."
   curl -L https://storage.googleapis.com/ewc-boot-db/ewc_chain.tar --output chain-data/chains/chain.tar
-  echo "extracting db backup...
+  echo "extracting db backup..."
   tar -xvf chain-data/chains/chain.tar -C chain-data/chains/
   echo "removing old nodes.json"
   rm chain-data/chains/EnergyWebChain/network/nodes.json
