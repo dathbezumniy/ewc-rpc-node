@@ -408,7 +408,7 @@ function install {
   echo "Doing first launch in order to populate chain-data directory"
   docker-compose up -d
   echo ""
-  echo "Stopping containers so you could download and unpack snapshot db"
+  echo "Stopping containers to download and unpack snapshot db"
   echo ""
   docker-compose down
   echo ""
