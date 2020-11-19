@@ -30,10 +30,13 @@
 
       In this configuration we receive RPC with self-signed certificate which is not allowed by most browsers.
       Afer the installation user is obligated to provide his own certificates.
+      
+4. I have added additional instructions to the script in order to download db-backup.
+    If for some reason script does not download and sets everything up automatically, please refer here for manual https://energyweb.atlassian.net/wiki/spaces/EWF/pages/1013153839/How+to+use+ready-to-go+chain+backup or ping me on discord.
 
-4. Now we have to wait till validator will be fully synced
+5. Now we have to wait till validator will be fully synced
 
-    In order to check progress please use `docker-compose logs -f`
+    In order to check progress you can use `docker-compose logs -f`
 
 ## HTTPS Certificate Informations
 
